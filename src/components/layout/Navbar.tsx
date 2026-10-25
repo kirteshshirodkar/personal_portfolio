@@ -1,10 +1,9 @@
-
 "use client";
 
 import { useState } from "react";
 import Link from "next/link";
 import { Menu, Moon, Sun, X } from "lucide-react";
-
+import { useTheme } from "@/components/providers/ThemeProvider";
 const navLinks = [
   { name: "Home", href: "#home" },
   { name: "About", href: "#about" },
@@ -16,7 +15,9 @@ const navLinks = [
 export default function Navbar() {
   const [activeLink, setActiveLink] = useState("Home");
   const [menuOpen, setMenuOpen] = useState(false);
-  const [lightMode, setLightMode] = useState(false);
+  const { theme, toggleTheme } = useTheme();
+  const lightMode = theme === "light";
+  const darkMode = theme === "dark";
 
   return (
     <header
@@ -46,7 +47,9 @@ export default function Navbar() {
               onClick={() => setActiveLink(link.name)}
               className={`relative py-2 text-[13px] transition-colors duration-200 ${
                 activeLink === link.name
-                  ? "text-white"
+                  ? lightMode
+                    ? "text-gray-900"
+                    : "text-white"
                   : lightMode
                     ? "text-gray-500 hover:text-gray-950"
                     : "text-gray-400 hover:text-white"
@@ -63,7 +66,7 @@ export default function Navbar() {
           {/* Theme toggle */}
           <button
             type="button"
-            onClick={() => setLightMode((prev) => !prev)}
+            onClick={toggleTheme}
             aria-label={`Switch to ${lightMode ? "dark" : "light"} mode`}
             className={`ml-2 rounded-full p-2 transition-colors ${
               lightMode
@@ -83,7 +86,7 @@ export default function Navbar() {
         <div className="flex items-center gap-3 md:hidden">
           <button
             type="button"
-            onClick={() => setLightMode((prev) => !prev)}
+            onClick={toggleTheme}
             aria-label={`Switch to ${lightMode ? "dark" : "light"} mode`}
             className="rounded-full p-2 text-current transition-colors hover:bg-white/10"
           >
@@ -106,7 +109,9 @@ export default function Navbar() {
       {menuOpen && (
         <div
           className={`border-t px-5 pb-5 pt-3 md:hidden ${
-            lightMode ? "border-gray-200 bg-white" : "border-white/[0.07] bg-[#0b0d10]"
+            lightMode
+              ? "border-gray-200 bg-white"
+              : "border-white/[0.07] bg-[#0b0d10]"
           }`}
         >
           <div className="mx-auto flex max-w-6xl flex-col">
