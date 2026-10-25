@@ -1,11 +1,14 @@
 import Link from "next/link";
+import Image from "next/image";
 import {
   ArrowDownRight,
   ArrowRight,
   FolderGit2,
   Link2,
   Mail,
+  
 } from "lucide-react";
+import hero from "../../../public/images/hero.png";
 
 const socialLinks = [
   {
@@ -156,27 +159,12 @@ export default function Hero() {
             />
 
             {/* Portrait placeholder */}
-            <div className="absolute inset-0 flex flex-col items-center justify-center px-8 text-center">
-              <div
-                className="mb-5 flex h-24 w-24 items-center justify-center
-                  rounded-full border border-[#6478e8]/20 bg-white/50
-                  text-3xl font-light tracking-widest text-[#6478e8]
-                  dark:border-white/15 dark:bg-white/[0.04]
-                  dark:text-[#b7c4ff]"
-              >
-                KS
-              </div>
-
-              <p className="text-xs uppercase tracking-[0.25em] text-gray-700 dark:text-gray-300">
-                Your Portrait
-              </p>
-
-              <p className="mt-2 text-xs leading-5 text-gray-500 dark:text-gray-500">
-                Replace this placeholder
-                <br />
-                with your profile photo
-              </p>
-            </div>
+            <Image
+              src={hero}
+              fill
+    
+              alt="Picture of the author"
+            />
 
             {/* Theme-aware bottom fade */}
             <div
@@ -202,7 +190,7 @@ export default function Hero() {
             aria-hidden="true"
             className="absolute right-5 top-8 text-3xl font-extralight text-[#7d85df] dark:text-[#c4ceff]"
           >
-            ✳
+            
           </span>
         </div>
       </div>
