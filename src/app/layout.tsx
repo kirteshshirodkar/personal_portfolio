@@ -18,6 +18,20 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Kirtesh Shirodkar | Portfolio",
   description: "Full-stack developer building modern web experiences.",
+  icons: {
+    icon: [
+      {
+        media: '(prefers-color-scheme: light)',
+        url: '/images/logo.png',
+        href: '/images/logo.png',
+      },
+      {
+        media: '(prefers-color-scheme: dark)',
+        url: '/images/logo.png',
+        href: '/images/logo.png',
+      },
+    ],
+  },
 };
 
 export default function RootLayout({
