@@ -1,9 +1,10 @@
 
 import Hero from "@/components/sections/Hero";
 import About from "@/components/sections/About";
+import Skills from "@/components/sections/Skills";
 
 const sections = [
-  { id: "skills", title: "Technologies I work with" },
+ 
   { id: "projects", title: "Some things I've built" },
   { id: "contact", title: "Have a project in mind?" },
 ];
@@ -13,6 +14,7 @@ export default function Home() {
     <main className="min-h-screen bg-[var(--background)] text-[var(--foreground)] transition-colors duration-300">
       <Hero />
       <About />
+      <Skills />
 
       {sections.map((section, index) => (
         <section
