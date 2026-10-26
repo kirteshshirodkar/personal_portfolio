@@ -1,15 +1,14 @@
 import Link from "next/link";
-import Image from "next/image";
+
 import {
   ArrowDownRight,
   ArrowRight,
   FolderGit2,
   Link2,
   Mail,
-  
 } from "lucide-react";
-import hero from "../../../public/images/hero.png";
 
+import HeroVisual from "./HeroVisual";
 const socialLinks = [
   {
     label: "GitHub",
@@ -121,77 +120,9 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Portrait composition */}
-        <div className="relative mx-auto mt-2 w-full max-w-[430px] md:mt-0 md:max-w-none">
-          <div
-            aria-hidden="true"
-            className="absolute left-1/2 top-1/2 h-64 w-64
-              -translate-x-1/2 -translate-y-1/2 rounded-full
-              bg-indigo-500/10 blur-[90px] dark:bg-indigo-500/15
-              sm:h-80 sm:w-80"
-          />
-
-          {/* Portrait frame */}
-          <div
-            className="relative mx-auto h-[370px] w-[280px] overflow-hidden
-              rounded-t-[150px] rounded-b-[42px]
-              border border-gray-300/80
-              bg-gradient-to-b from-[#e8ebf8] via-[#f1f2f8] to-[#f8f9fc]
-              transition-colors duration-300
-              dark:border-white/10 dark:from-[#20283b]
-              dark:via-[#141925] dark:to-[#0b0d10]
-              sm:h-[440px] sm:w-[330px]
-              md:ml-auto md:mr-10 lg:h-[470px] lg:w-[350px]"
-          >
-            {/* Decorative rings */}
-            <div
-              aria-hidden="true"
-              className="absolute -right-16 top-20 h-56 w-56
-                rounded-full border border-[#6478e8]/15
-                dark:border-[#a6b4ff]/15"
-            />
-
-            <div
-              aria-hidden="true"
-              className="absolute -left-20 top-36 h-60 w-60
-                rounded-full border border-black/[0.06]
-                dark:border-white/[0.06]"
-            />
-
-            {/* Portrait placeholder */}
-            <Image
-              src={hero}
-              fill
-    
-              alt="Picture of the author"
-            />
-
-            {/* Theme-aware bottom fade */}
-            <div
-              className="absolute inset-x-0 bottom-0 h-32
-                bg-gradient-to-t from-[#f8f9fc] to-transparent
-                dark:from-[#0b0d10]"
-            />
-          </div>
-
-          {/* Caption */}
-          <div className="absolute bottom-14 right-0 hidden max-w-[145px] md:block lg:right-[-4px]">
-            <span className="mb-3 block h-px w-10 bg-[#8b9dff]/70" />
-            <p className="text-xs leading-5 text-[var(--muted)]">
-              Turning ideas
-              <br />
-              into sleek web
-              <br />
-              experiences.
-            </p>
-          </div>
-
-          <span
-            aria-hidden="true"
-            className="absolute right-5 top-8 text-3xl font-extralight text-[#7d85df] dark:text-[#c4ceff]"
-          >
-            
-          </span>
+        {/* Developer visual */}
+        <div className="relative mx-auto w-full max-w-[480px] md:mt-0">
+          <HeroVisual />
         </div>
       </div>
 
