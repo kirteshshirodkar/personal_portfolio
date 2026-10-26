@@ -16,7 +16,7 @@ import {
 
 const EMAIL = "kirtesh.dev@gmail.com"; // Replace with your email
 const GITHUB_URL = "https://github.com/kirteshshirodkar";
-const LINKEDIN_URL = "https://www.linkedin.com/"; // Replace with your profile URL
+const LINKEDIN_URL = "https://www.linkedin.com/in/kirtesh-shirodkar/"; // Replace with your profile URL
 
 export default function Contact() {
   const [copied, setCopied] = useState(false);

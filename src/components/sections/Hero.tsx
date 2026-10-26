@@ -12,17 +12,17 @@ import HeroVisual from "./HeroVisual";
 const socialLinks = [
   {
     label: "GitHub",
-    href: "https://github.com/",
+    href: "https://github.com/kirteshshirodkar",
     icon: FolderGit2,
   },
   {
     label: "LinkedIn",
-    href: "https://www.linkedin.com/",
+    href: "https://www.linkedin.com/in/kirtesh-shirodkar/",
     icon: Link2,
   },
   {
     label: "Email",
-    href: "mailto:your-email@example.com",
+    href: "mailto:kirtesh.dev@gmail.com",
     icon: Mail,
   },
 ];
