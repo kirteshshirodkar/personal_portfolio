@@ -1,5 +1,5 @@
-
 import Link from "next/link";
+import Image from "next/image";
 import {
   ArrowDownRight,
   ArrowUpRight,
@@ -30,9 +30,9 @@ const projects = [
       "Clerk",
       "Cloudinary",
     ],
+    image: "/images/projects/socialvibe.png",
     liveUrl: "https://social-media-app-liart-xi.vercel.app/",
     githubUrl: "https://github.com/kirteshshirodkar/SocialMediaApp",
-    visual: "social",
   },
   {
     number: "02",
@@ -55,120 +55,31 @@ const projects = [
       "JWT",
       "Cloudinary",
     ],
-    liveUrl:
-      "https://employee-leave-management-system-k8.vercel.app/",
+    image: "/images/projects/leavetracker.png",
+    liveUrl: "https://employee-leave-management-system-k8.vercel.app/",
     githubUrl:
       "https://github.com/kirteshshirodkar/Employee-Leave-Management-System",
-    visual: "leave",
   },
 ];
 
-function ProjectPreview({ type }: { type: string }) {
-  const isSocial = type === "social";
-
+function ProjectPreview({ src, alt }: { src: string; alt: string }) {
   return (
-    <div className="relative flex aspect-[16/9] items-center justify-center overflow-hidden rounded-xl border border-[var(--border)] bg-[var(--background)] p-5 sm:p-8">
-      {/* Background decoration */}
-      <div className="absolute -right-12 -top-16 h-48 w-48 rounded-full bg-[var(--accent)]/10 blur-3xl" />
-      <div className="absolute -bottom-20 -left-10 h-40 w-40 rounded-full bg-[var(--accent)]/10 blur-3xl" />
+    <div className="group/preview relative aspect-[16/10] overflow-hidden rounded-xl border border-[var(--border)] bg-[var(--background)]">
+      {/* Screenshot */}
+      <Image
+        src={src}
+        alt={alt}
+        fill
+        sizes="(max-width: 1024px) 100vw, 50vw"
+        className="object-cover object-top transition-transform duration-700 ease-out group-hover/preview:scale-[1.03]"
+      />
 
-      {/* Browser window */}
-      <div className="relative w-full max-w-md overflow-hidden rounded-xl border border-[var(--border)] bg-[var(--surface)] shadow-2xl transition-transform duration-500 group-hover:scale-[1.02]">
-        <div className="flex h-9 items-center gap-1.5 border-b border-[var(--border)] px-3">
-          <span className="h-2 w-2 rounded-full bg-red-400/70" />
-          <span className="h-2 w-2 rounded-full bg-yellow-400/70" />
-          <span className="h-2 w-2 rounded-full bg-green-400/70" />
+      {/* Subtle overlay */}
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-60 transition-opacity duration-300 group-hover/preview:opacity-30" />
 
-          <div className="ml-3 h-4 flex-1 rounded-md bg-[var(--background)]" />
-        </div>
-
-        {isSocial ? (
-          <div className="grid grid-cols-[42px_1fr] gap-3 p-3 sm:grid-cols-[56px_1fr] sm:gap-4 sm:p-5">
-            <div className="space-y-3 pt-1">
-              <div className="mx-auto h-7 w-7 rounded-lg bg-[var(--accent)]/20" />
-              <div className="mx-auto h-5 w-5 rounded-md bg-[var(--border)]" />
-              <div className="mx-auto h-5 w-5 rounded-md bg-[var(--border)]" />
-              <div className="mx-auto h-5 w-5 rounded-md bg-[var(--border)]" />
-            </div>
-
-            <div className="space-y-3">
-              <div className="flex items-center justify-between">
-                <div className="h-3 w-24 rounded bg-[var(--foreground)]/70" />
-                <div className="h-5 w-5 rounded-full bg-[var(--accent)]/20" />
-              </div>
-
-              <div className="flex gap-2 overflow-hidden">
-                {[1, 2, 3, 4].map((item) => (
-                  <div
-                    key={item}
-                    className="flex min-w-0 flex-1 flex-col items-center gap-1.5 rounded-lg border border-[var(--border)] p-2"
-                  >
-                    <div className="h-6 w-6 rounded-full bg-[var(--accent)]/30" />
-                    <div className="h-1.5 w-8 rounded bg-[var(--border)]" />
-                  </div>
-                ))}
-              </div>
-
-              <div className="rounded-lg border border-[var(--border)] p-3">
-                <div className="mb-3 flex items-center gap-2">
-                  <div className="h-6 w-6 rounded-full bg-[var(--accent)]/30" />
-                  <div className="h-2 w-20 rounded bg-[var(--foreground)]/50" />
-                </div>
-                <div className="mb-3 h-16 rounded-md bg-[var(--accent)]/10 sm:h-20" />
-                <div className="h-2 w-3/4 rounded bg-[var(--border)]" />
-                <div className="mt-2 h-2 w-1/2 rounded bg-[var(--border)]" />
-              </div>
-            </div>
-          </div>
-        ) : (
-          <div className="grid grid-cols-[65px_1fr] gap-3 p-3 sm:grid-cols-[90px_1fr] sm:gap-4 sm:p-5">
-            <div className="space-y-3 rounded-lg border border-[var(--border)] p-2">
-              <div className="mb-4 h-3 w-full rounded bg-[var(--accent)]/30" />
-              {[1, 2, 3, 4].map((item) => (
-                <div
-                  key={item}
-                  className="h-2 rounded bg-[var(--border)]"
-                />
-              ))}
-            </div>
-
-            <div className="space-y-3">
-              <div className="flex items-center justify-between gap-2">
-                <div>
-                  <div className="h-3 w-24 rounded bg-[var(--foreground)]/70" />
-                  <div className="mt-2 h-2 w-16 rounded bg-[var(--border)]" />
-                </div>
-                <div className="h-6 w-12 rounded-md bg-[var(--accent)]/20" />
-              </div>
-
-              <div className="grid grid-cols-3 gap-2">
-                {[1, 2, 3].map((item) => (
-                  <div
-                    key={item}
-                    className="rounded-md border border-[var(--border)] p-2"
-                  >
-                    <div className="h-2 w-8 rounded bg-[var(--border)]" />
-                    <div className="mt-3 h-4 w-6 rounded bg-[var(--accent)]/40" />
-                  </div>
-                ))}
-              </div>
-
-              <div className="space-y-3 rounded-lg border border-[var(--border)] p-3">
-                <div className="h-2 w-2/3 rounded bg-[var(--foreground)]/50" />
-                {[1, 2, 3].map((item) => (
-                  <div
-                    key={item}
-                    className="flex items-center gap-2 border-t border-[var(--border)] pt-2"
-                  >
-                    <div className="h-4 w-4 rounded-full bg-[var(--accent)]/20" />
-                    <div className="h-2 flex-1 rounded bg-[var(--border)]" />
-                    <div className="h-4 w-10 rounded bg-[var(--accent)]/20" />
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        )}
+      {/* Preview label */}
+      <div className="absolute bottom-3 left-3 rounded-full border border-white/20 bg-black/60 px-3 py-1.5 text-[10px] font-medium tracking-wide text-white opacity-0 backdrop-blur-md transition-opacity duration-300 group-hover/preview:opacity-100">
+        PROJECT PREVIEW
       </div>
     </div>
   );
@@ -213,7 +124,10 @@ export default function Projects() {
               className="group grid gap-6 rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-4 transition-colors duration-300 hover:border-[var(--accent)]/40 sm:p-6 lg:grid-cols-[1.05fr_0.95fr] lg:gap-9 lg:p-7"
             >
               {/* Preview */}
-              <ProjectPreview type={project.visual} />
+              <ProjectPreview
+                src={project.image}
+                alt={`${project.title} application screenshot`}
+              />
 
               {/* Details */}
               <div className="flex flex-col py-2 lg:py-3">
