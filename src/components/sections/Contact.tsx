@@ -131,7 +131,7 @@ export default function Contact() {
               <div className="space-y-1">
                 <p className="text-sm font-medium">Based in</p>
                 <p className="text-sm text-[var(--muted)]">
-                  Goa, India · Open to opportunities
+                  Bengaluru, Karnataka, India · Open to opportunities
                 </p>
               </div>
             </div>

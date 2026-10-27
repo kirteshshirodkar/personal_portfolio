@@ -9,17 +9,20 @@ import {
 const skillGroups = [
   {
     number: "01",
-    title: "Frontend Development",
+    title: "Fullstack Development",
     description: "Building modern, responsive web experiences.",
     icon: Code2,
     skills: [
-      "HTML",
-      "CSS",
       "JavaScript",
       "TypeScript",
       "React",
       "Next.js",
       "Tailwind CSS",
+      "SQL",
+      "PostgreSQL",
+      "Express.js",
+      "REST API's"
+
     ],
   },
   {
@@ -27,14 +30,14 @@ const skillGroups = [
     title: "Programming & DSA",
     description: "Writing efficient code and solving problems.",
     icon: BrainCircuit,
-    skills: ["C++", "Python", "Data Structures", "Algorithms", "Problem Solving"],
+    skills: ["C++", "Python","JavaScript","Java", "Data Structures", "Algorithms", "Problem Solving"],
   },
   {
     number: "03",
     title: "Tools & AI Engineering",
     description: "Exploring tools and technologies to build useful products.",
     icon: Wrench,
-    skills: ["Git", "GitHub", "VS Code", "REST APIs", "AI/ML Fundamentals"],
+    skills: ["Git", "GitHub","Python","AI Optimization", "REST APIs", "AI/ML Fundamentals"],
   },
 ];
 
