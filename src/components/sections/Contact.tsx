@@ -214,7 +214,7 @@ export default function Contact() {
                     maxLength={100}
                     value={name}
                     onChange={(event) => setName(event.target.value)}
-                    placeholder="John Doe"
+                    placeholder="Your Name"
                     className="w-full rounded-xl border border-[var(--border)] bg-[var(--background)] px-4 py-3 text-sm text-[var(--foreground)] outline-none transition-all placeholder:text-[var(--muted)]/70 focus:border-[var(--accent)] focus:ring-2 focus:ring-[var(--accent)]/15"
                   />
                 </div>
@@ -235,7 +235,7 @@ export default function Contact() {
                     maxLength={254}
                     value={senderEmail}
                     onChange={(event) => setSenderEmail(event.target.value)}
-                    placeholder="john@example.com"
+                    placeholder="Your Email"
                     className="w-full rounded-xl border border-[var(--border)] bg-[var(--background)] px-4 py-3 text-sm text-[var(--foreground)] outline-none transition-all placeholder:text-[var(--muted)]/70 focus:border-[var(--accent)] focus:ring-2 focus:ring-[var(--accent)]/15"
                   />
                 </div>
